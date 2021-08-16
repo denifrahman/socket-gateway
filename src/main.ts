@@ -16,7 +16,7 @@ async function bootstrap() {
   //   },
   // });
   const app = await NestFactory.create(AppModule);
-  app.useWebSocketAdapter(new RedisIoAdapter(app));
+  // app.useWebSocketAdapter(new RedisIoAdapter(app));
   app.enableCors({origin:'http://localhost', credentials:true,allowedHeaders:'Access-Control-Allow-Credentials'});
   app.useWebSocketAdapter(new SocketAdapter(app));
   await app.listen(8989);
